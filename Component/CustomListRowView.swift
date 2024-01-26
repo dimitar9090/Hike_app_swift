@@ -7,7 +7,7 @@
 import SwiftUI
 
 struct CustomListRowView: View {
-  // MARK: - PROPERTIES
+ 
   
   @State var rowLabel: String
   @State var rowIcon: String
@@ -18,7 +18,7 @@ struct CustomListRowView: View {
   
   var body: some View {
     LabeledContent {
-      // Content
+    
       if rowContent != nil {
         Text(rowContent!)
           .foregroundColor(.primary)
@@ -31,7 +31,7 @@ struct CustomListRowView: View {
         EmptyView()
       }
     } label: {
-      // Label
+     
       HStack {
         ZStack {
           RoundedRectangle(cornerRadius: 8)
