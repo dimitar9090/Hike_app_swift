@@ -7,13 +7,11 @@
 import SwiftUI
 
 struct CardView: View {
-  // MARK: - PROPERTIES
+ 
   
   @State private var imageNumber: Int = 1
   @State private var randomNumber: Int = 1
   @State private var isShowingSheet: Bool = false
-  
-  // MARK: - FUNCTIONS
   
   func randomImage() {
     print("--- BUTTON WAS PRESSED ---")
@@ -32,13 +30,11 @@ struct CardView: View {
   }
   
   var body: some View {
-    // MARK: - CARD
     
     ZStack {
       CustomBackgroundView()
       
       VStack {
-        // MARK: - HEADER
         
         VStack(alignment: .leading) {
           HStack {
@@ -57,7 +53,7 @@ struct CardView: View {
             Spacer()
             
             Button {
-              // ACTION: Show a Sheet
+          
               print("The button was pressed.")
               isShowingSheet.toggle()
             } label: {
@@ -74,10 +70,10 @@ struct CardView: View {
             .multilineTextAlignment(.leading)
             .italic()
             .foregroundColor(.customGrayMedium)
-        } //: HEADER
+        } 
         .padding(.horizontal, 30)
         
-        // MARK: - MAIN CONTENT
+        
         
         ZStack {
           CustomCircleView()
@@ -88,10 +84,10 @@ struct CardView: View {
             .animation(.default, value: imageNumber)
         }
         
-        // MARK: - FOOTER
+      
         
         Button {
-          // ACTION: Generate a random number
+         
           
           randomImage()
         } label: {
@@ -111,8 +107,8 @@ struct CardView: View {
             .shadow(color: .black.opacity(0.25), radius: 0.25, x: 1, y: 2)
         }
         .buttonStyle(GradientButton())
-      } //: ZSTACK
-    } //: CARD
+      } 
+    }
     .frame(width: 320, height: 570)
   }
 }
